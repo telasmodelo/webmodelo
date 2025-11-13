@@ -10,26 +10,31 @@ const products = [
     name: "Polar",
     description: "Tela polar de alta calidad, ideal para confección de prendas abrigadas y cómodas.",
     category: "Polar",
-    features: ["Térmico", "Suave", "Liviano"],
     image: "/images/polar-fabric.jpg",
     subproducts: [
       {
         id: "polar-clasico",
         name: "Clásico",
         description: "Polar tradicional con máxima calidez y durabilidad.",
-        features: ["Máxima calidez", "Duradero", "Tradicional"]
+        composicion: "100% poliester",
+        ancho: "[Completar]",
+        rendimiento: "[Completar]"
       },
       {
         id: "polar-liviano",
         name: "Liviano",
-        description: "Polar ligero perfecto para capas intermedias y actividades activas.",
-        features: ["Ligero", "Transpirable", "Flexible"]
+        description: "Polar ligero perfecto para capas intermedias.",
+        composicion: "100% poliester",
+        ancho: "[Completar]",
+        rendimiento: "[Completar]"
       },
       {
         id: "polar-frazada",
         name: "Frazada",
         description: "Ideal para ropa de cama abrigada. Para hacer mantas de todos los tamaños para el invierno, tanto para uso domestico como comercial.",
-        features: ["Abrigado", "Ropa de cama", "Versátil"]
+        composicion: "100% poliester",
+        ancho: "[Completar]",
+        rendimiento: "[Completar]"
       }
     ]
   },
@@ -38,20 +43,23 @@ const products = [
     name: "Deportivo",
     description: "Tejido técnico especializado para prendas deportivas y activewear de alto rendimiento.",
     category: "Deportivo",
-    features: ["Transpirable", "Elástico", "Secado rápido"],
     image: "/images/deportivo-fabric.png",
     subproducts: [
       {
         id: "deportivo-clasico",
         name: "Clásico",
         description: "Tejido deportivo tradicional con excelente transpirabilidad y durabilidad.",
-        features: ["Transpirable", "Duradero", "Versátil"]
+        composicion: "100% poliester",
+        ancho: "[Completar]",
+        rendimiento: "[Completar]"
       },
       {
         id: "deportivo-frizado",
         name: "Frizado",
-        description: "Tejido deportivo con textura frizada para mayor comodidad y estética.",
-        features: ["Textura suave", "Confort", "Estético"]
+        description: "Tejido deportivo con friza en el reverso, lo que aporta abrigo y confort. Su interior suave lo hace ideal para prendas de invierno.",
+        composicion: "100% poliester",
+        ancho: "[Completar]",
+        rendimiento: "[Completar]"
       }
     ]
   },
@@ -60,7 +68,6 @@ const products = [
     name: "Darlom",
     description: "Tejido Darlom de alta calidad, conocido por su suavidad y resistencia al desgaste.",
     category: "Darlom",
-    features: ["Suave", "Resistente", "Duradero"],
     image: "/images/darlom-fabric.jpg"
   },
   {
@@ -68,7 +75,6 @@ const products = [
     name: "Sarga",
     description: "Tela sarga resistente y duradera, perfecta para prendas de trabajo y uniformes.",
     category: "Sarga",
-    features: ["Resistente", "Duradera", "Fácil cuidado"],
     image: "/images/sarga.png"
   },
   {
@@ -76,7 +82,6 @@ const products = [
     name: "Elastano",
     description: "Tejido con elastano para máxima flexibilidad y comodidad en el movimiento.",
     category: "Elastano",
-    features: ["Elástico", "Flexible", "Comodidad"],
     image: "/images/elastano.png"
   },
   {
@@ -84,38 +89,47 @@ const products = [
     name: "Camisetas",
     description: "Algodón de alta calidad para confección de camisetas cómodas y transpirables.",
     category: "Camisetas",
-    features: ["Algodón", "Transpirable", "Suave"],
     image: "https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=400&h=300&fit=crop",
     subproducts: [
       {
         id: "camisetas-set",
         name: "Set",
         description: "Conjunto completo de camisetas con diferentes tallas y colores coordinados.",
-        features: ["Conjunto completo", "Múltiples tallas", "Colores coordinados"]
+        composicion: "100% poliester",
+        ancho: "[Completar]",
+        rendimiento: "[Completar]"
       },
       {
         id: "camisetas-w15",
         name: "W15",
         description: "Camisetas con peso de 150 gramos por metro cuadrado, ideal para uso diario.",
-        features: ["150g/m²", "Uso diario", "Durabilidad"]
+        composicion: "100% poliester",
+        ancho: "[Completar]",
+        rendimiento: "[Completar]"
       },
       {
         id: "camisetas-w5",
         name: "W5",
         description: "Camisetas ultra ligeras con peso de 50 gramos por metro cuadrado, perfectas para verano.",
-        features: ["50g/m²", "Ultra ligero", "Verano"]
+        composicion: "100% poliester",
+        ancho: "[Completar]",
+        rendimiento: "[Completar]"
       },
       {
         id: "camisetas-w18",
         name: "W18",
         description: "Camisetas con peso de 180 gramos por metro cuadrado, mayor resistencia y durabilidad.",
-        features: ["180g/m²", "Mayor resistencia", "Durabilidad"]
+        composicion: "100% poliester",
+        ancho: "[Completar]",
+        rendimiento: "[Completar]"
       },
       {
         id: "camisetas-elastano",
         name: "Con Elastano",
         description: "Camisetas con elastano para mayor flexibilidad y ajuste perfecto al cuerpo.",
-        features: ["Elastano", "Flexibilidad", "Ajuste perfecto"]
+        composicion: "100% poliester",
+        ancho: "[Completar]",
+        rendimiento: "[Completar]"
       }
     ]
   },
@@ -124,7 +138,6 @@ const products = [
     name: "Ribb",
     description: "Tejido ribb con textura acanalada, ideal para cuellos, puños y prendas ajustadas.",
     category: "Ribb",
-    features: ["Textura acanalada", "Elástico", "Ajustado"],
     image: "/images/ribb.png"
   }
 ];
@@ -151,10 +164,14 @@ const ProductShowcase = () => {
               Textiles
             </span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Descubrí nuestra amplia gama de textiles de alta calidad, 
-            cada uno seleccionado cuidadosamente para satisfacer las necesidades de tu empresa.
-          </p>
+          <div className="text-xl text-muted-foreground max-w-2xl mx-auto space-y-4">
+            <p>
+              Descubrí nuestras telas de punto y plano, diseñadas para ofrecer calidad, durabilidad y excelente rendimiento.
+            </p>
+            <p>
+              Todos nuestros productos son lavables, de colores firmes y con encogimiento controlado, ideales para confeccionar prendas y artículos textiles de todo tipo.
+            </p>
+          </div>
         </div>
 
         {/* Products Grid */}
@@ -184,13 +201,6 @@ const ProductShowcase = () => {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4">
-                    <div className="flex flex-wrap gap-2">
-                      {product.features.map((feature, index) => (
-                        <Badge key={index} variant="secondary" className="text-xs">
-                          {feature}
-                        </Badge>
-                      ))}
-                    </div>
                     <Button 
                       variant="outline" 
                       className="w-full group"
@@ -221,10 +231,7 @@ const ProductShowcase = () => {
                       </h4>
                       <p className="text-sm text-muted-foreground">
                         {product.name === "Polar" ? 
-                          "Nuestro polar es una tela sintética de alta calidad que combina calidez, " +
-                          "ligereza y durabilidad. Perfecta para prendas de abrigo, mantiene el calor " +
-                          "corporal mientras permite la transpiración. Disponible en múltiples variantes " +
-                          "para adaptarse a diferentes necesidades y estilos." :
+                          "Nuestro polar es una tela sintética de alta calidad que combina calidez y durabilidad. Perfecta para prendas de abrigo y frazadas." :
                           product.name === "Deportivo" ?
                           "Nuestro tejido deportivo está diseñado para ofrecer máximo rendimiento en " +
                           "actividades físicas. Combina transpirabilidad, elasticidad y secado rápido " +
@@ -250,15 +257,22 @@ const ProductShowcase = () => {
                           <div className="flex items-center justify-between mb-2">
                             <h5 className="font-medium text-foreground">{subproduct.name}</h5>
                           </div>
-                          <p className="text-sm text-muted-foreground mb-3">
+                          <p className="text-sm text-muted-foreground mb-4">
                             {subproduct.description}
                           </p>
-                          <div className="flex flex-wrap gap-1">
-                            {subproduct.features.map((feature, index) => (
-                              <Badge key={index} variant="outline" className="text-xs">
-                                {feature}
-                              </Badge>
-                            ))}
+                          <div className="space-y-2 pt-4 border-t border-border">
+                            <div className="text-sm">
+                              <span className="font-semibold text-foreground">Composición:</span>
+                              <span className="text-muted-foreground ml-2">{subproduct.composicion}</span>
+                            </div>
+                            <div className="text-sm">
+                              <span className="font-semibold text-foreground">Ancho:</span>
+                              <span className="text-muted-foreground ml-2">{subproduct.ancho}</span>
+                            </div>
+                            <div className="text-sm">
+                              <span className="font-semibold text-foreground">Rendimiento:</span>
+                              <span className="text-muted-foreground ml-2">{subproduct.rendimiento}</span>
+                            </div>
                           </div>
                         </CardContent>
                       </Card>
