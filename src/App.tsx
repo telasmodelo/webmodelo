@@ -8,6 +8,7 @@ import AboutUs from "./pages/AboutUs";
 import FabricColors from "./pages/FabricColors";
 import CartaDeColores from "./pages/CartaDeColores";
 import NotFound from "./pages/NotFound";
+import FloatingWhatsAppButton from "./components/FloatingWhatsAppButton";
 
 const queryClient = new QueryClient();
 
@@ -17,6 +18,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <FloatingWhatsAppButton />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/about-us" element={<AboutUs />} />
