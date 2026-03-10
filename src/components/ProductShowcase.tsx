@@ -1,154 +1,68 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Eye, Palette, ChevronDown, ChevronUp } from "lucide-react";
-import { useState } from "react";
+import { Palette } from "lucide-react";
 
 const products = [
   {
     id: 1,
     name: "Polar",
-    description: "Tela polar de alta calidad, ideal para confección de prendas abrigadas y cómodas.",
+    description: "Tela polar de alta calidad, ideal para la confección de prendas abrigadas y frazadas.\n\nRecomendada para uso escolar y para prendas como chalecos, pulóveres, camperas, forro de camperas, mantas y mucho más.\n\nContamos con distintas variantes, con diferentes anchos y rindes.\n\nAncho: de 1,50 a 2,40 m\nRinde: de 1,30 a 2 kg/m aprox.",
     category: "Polar",
-    image: "/images/polar-fabric.jpg",
-    subproducts: [
-      {
-        id: "polar-clasico",
-        name: "Clásico",
-        description: "Polar tradicional con máxima calidez y durabilidad.",
-        composicion: "100% poliester",
-        ancho: "[Completar]",
-        rendimiento: "[Completar]"
-      },
-      {
-        id: "polar-liviano",
-        name: "Liviano",
-        description: "Polar ligero perfecto para capas intermedias.",
-        composicion: "100% poliester",
-        ancho: "[Completar]",
-        rendimiento: "[Completar]"
-      },
-      {
-        id: "polar-frazada",
-        name: "Frazada",
-        description: "Ideal para ropa de cama abrigada. Para hacer mantas de todos los tamaños para el invierno, tanto para uso domestico como comercial.",
-        composicion: "100% poliester",
-        ancho: "[Completar]",
-        rendimiento: "[Completar]"
-      }
-    ]
+    image: "/images/polar-fabric.jpg"
   },
   {
     id: 2,
     name: "Deportivo",
-    description: "Tejido técnico especializado para prendas deportivas y activewear de alto rendimiento.",
+    description: "Tela desarrollada para la confección de indumentaria deportiva y urbana. Disponible en versión frisada y sin frisar.\n\nIdeal para la producción de conjuntos deportivos, buzos y pantalones.\n\nDisponible en distintas variantes, con diferentes anchos y rindes.\n\nAncho: de 1,45 a 1,60 m\nRinde: de 2 a 3,10 Kg/m",
     category: "Deportivo",
-    image: "/images/deportivo-fabric.png",
-    subproducts: [
-      {
-        id: "deportivo-clasico",
-        name: "Clásico",
-        description: "Tejido deportivo tradicional con excelente transpirabilidad y durabilidad.",
-        composicion: "100% poliester",
-        ancho: "[Completar]",
-        rendimiento: "[Completar]"
-      },
-      {
-        id: "deportivo-frizado",
-        name: "Frizado",
-        description: "Tejido deportivo con friza en el reverso, lo que aporta abrigo y confort. Su interior suave lo hace ideal para prendas de invierno.",
-        composicion: "100% poliester",
-        ancho: "[Completar]",
-        rendimiento: "[Completar]"
-      }
-    ]
+    image: "/images/tela deportivo.jpg"
   },
   {
     id: 3,
     name: "Darlom",
-    description: "Tejido Darlom de alta calidad, conocido por su suavidad y resistencia al desgaste.",
+    description: "Tela de punto con elasticidad, suave al tacto y de acabado opaco.\n\nSe caracteriza por su resistencia y estabilidad, manteniendo forma y color con el uso y los lavados.\n\nDestinada a la confección de indumentaria que requiere comodidad y libertad de movimiento.\n\nDisponible en distintas variantes, con diferentes anchos y rindes.\n\nAncho: 1,60 m\nRinde: de 2 a 2,90 Kg/m",
     category: "Darlom",
     image: "/images/darlom-fabric.jpg"
   },
   {
     id: 4,
-    name: "Sarga",
-    description: "Tela sarga resistente y duradera, perfecta para prendas de trabajo y uniformes.",
-    category: "Sarga",
-    image: "/images/sarga.png"
+    name: "Tejido plano",
+    description: "Sarga 100% poliéster, disponible en variedad esmerilada o Snowtex.\n\nLa versión esmerilada presenta un acabado que aporta suavidad al tacto y un aspecto opaco.\nLa variante Snowtex cuenta con tratamiento especial que le confiere propiedad impermeable.\n\nDestinada a la confección de camperas, abrigos, equipos de trabajo impermeables y prendas deportivas.\n\nDisponible en distintas variantes, con diferentes anchos y rindes.\n\nAncho: de 1,45 a 1,50 m\nRinde: de 3,60 a 5,60 Kg/m",
+    category: "Tejido plano",
+    image: "/images/tela sarga.png"
   },
   {
     id: 5,
-    name: "Elastano",
-    description: "Tejido con elastano para máxima flexibilidad y comodidad en el movimiento.",
-    category: "Elastano",
+    name: "Telas con elastano",
+    description: "Tejido con elastano que aporta elasticidad y buena recuperación, acompañando el movimiento sin perder estabilidad.\n\nSe caracteriza por su adaptabilidad y confort, manteniendo forma y ajuste con el uso y los lavados.\n\nDestinada a la confección de indumentaria deportiva, urbana y prendas que requieren mayor flexibilidad.\n\nDisponible en distintas variantes, con diferentes anchos y rindes.\n\nAncho: de 1,55 a 1,80 m\nRinde: de 3,20 a 5 Kg/m",
+    category: "Telas con elastano",
     image: "/images/elastano.png"
   },
   {
     id: 6,
-    name: "Camisetas",
-    description: "Algodón de alta calidad para confección de camisetas cómodas y transpirables.",
-    category: "Camisetas",
-    image: "https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=400&h=300&fit=crop",
-    subproducts: [
-      {
-        id: "camisetas-set",
-        name: "Set",
-        description: "Conjunto completo de camisetas con diferentes tallas y colores coordinados.",
-        composicion: "100% poliester",
-        ancho: "[Completar]",
-        rendimiento: "[Completar]"
-      },
-      {
-        id: "camisetas-w15",
-        name: "W15",
-        description: "Camisetas con peso de 150 gramos por metro cuadrado, ideal para uso diario.",
-        composicion: "100% poliester",
-        ancho: "[Completar]",
-        rendimiento: "[Completar]"
-      },
-      {
-        id: "camisetas-w5",
-        name: "W5",
-        description: "Camisetas ultra ligeras con peso de 50 gramos por metro cuadrado, perfectas para verano.",
-        composicion: "100% poliester",
-        ancho: "[Completar]",
-        rendimiento: "[Completar]"
-      },
-      {
-        id: "camisetas-w18",
-        name: "W18",
-        description: "Camisetas con peso de 180 gramos por metro cuadrado, mayor resistencia y durabilidad.",
-        composicion: "100% poliester",
-        ancho: "[Completar]",
-        rendimiento: "[Completar]"
-      },
-      {
-        id: "camisetas-elastano",
-        name: "Con Elastano",
-        description: "Camisetas con elastano para mayor flexibilidad y ajuste perfecto al cuerpo.",
-        composicion: "100% poliester",
-        ancho: "[Completar]",
-        rendimiento: "[Completar]"
-      }
-    ]
+    name: "Telas para camisetas",
+    description: "Telas técnicas de punto, aptas para sublimación.\n\nDisponibles en distintas tramas (caladas, microperforadas y otras variantes), que favorecen la respirabilidad y el confort en uso intensivo.\n\nLivianas y resistentes, mantienen su estructura sin abrirse ni desgarrarse y soportan lavados frecuentes sin perder rendimiento.\n\nDestinadas a la confección de camisetas y shorts deportivos (fútbol, básquet, running y otras disciplinas), así como también para tiras y detalles complementarios.\n\nDisponible en distintas variantes, con diferentes anchos y rindes.\n\nAncho: de 1,55 a 1,80 m\nRinde: de 3,20 a 5 Kg/m",
+    category: "Telas para camisetas",
+    image: "/images/camisetasweb.png"
   },
   {
     id: 7,
-    name: "Ribb",
-    description: "Tejido ribb con textura acanalada, ideal para cuellos, puños y prendas ajustadas.",
-    category: "Ribb",
+    name: "Ribb/Puños",
+    description: "Ribb microfibra standard de estructura tubular, compuesto por 100% poliéster.\n\nPresenta estructura acanalada y elasticidad, lo que le otorga buena adaptación y durabilidad en aplicaciones específicas de confección.\n\nDestinado principalmente a la realización de cuellos y puños, así como a otras terminaciones que requieren ajuste y resistencia.\n\nDisponible en distintas variantes, con diferentes anchos y rindes.\n\nAncho: de 0,6 a 0,8 m\nRinde: de 2,70 a 3,20 Kg/m",
+    category: "Ribb/Puños",
     image: "/images/ribb.png"
+  },
+  {
+    id: 8,
+    name: "Redes y Forrería",
+    description: "Telas técnicas livianas y resistentes, desarrolladas para aplicaciones que requieren ventilación, soporte y durabilidad.\n\nSe caracterizan por su estructura firme y funcional, adecuadas para usos donde se necesita respirabilidad y refuerzo.\n\nDestinadas a forrería de prendas, bolsillería, interiores de camperas, mochilas y otras aplicaciones específicas.\n\nDisponible en distintas variantes, con diferentes anchos y rindes.\n\nAncho: de 1,50 a 1,67 m\nRinde: de 6 a 6,20 Kg/m",
+    category: "Redes y Forrería",
+    image: "/images/redes-forreria.jpg"
   }
 ];
 
 const ProductShowcase = () => {
-  const [expandedProduct, setExpandedProduct] = useState<number | null>(null);
-
-  const toggleExpansion = (productId: number) => {
-    setExpandedProduct(expandedProduct === productId ? null : productId);
-  };
-
   return (
     <section id="productos" className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -166,10 +80,10 @@ const ProductShowcase = () => {
           </h2>
           <div className="text-xl text-muted-foreground max-w-2xl mx-auto space-y-4">
             <p>
-              Descubrí nuestras telas de punto y plano, diseñadas para ofrecer calidad, durabilidad y excelente rendimiento.
+              Descubrí nuestras telas de punto y plano, desarrolladas para ofrecer calidad, durabilidad y excelente rendimiento.
             </p>
             <p>
-              Todos nuestros productos son lavables, de colores firmes y con encogimiento controlado, ideales para confeccionar prendas y artículos textiles de todo tipo.
+              Todos nuestros productos son lavables, de colores firmes y con encogimiento controlado, ideales para la confección de prendas y productos textiles.
             </p>
           </div>
         </div>
@@ -179,7 +93,7 @@ const ProductShowcase = () => {
           {products.map((product) => (
             <div key={product.id} className="space-y-4">
               <Card className="group hover:shadow-elegant transition-smooth border-border hover:border-primary/20">
-                <div className="aspect-[4/3] overflow-hidden rounded-t-lg">
+                <div className="aspect-[4/3] overflow-hidden rounded-t-lg hidden">
                   <img 
                     src={product.image} 
                     alt={product.name}
@@ -187,99 +101,15 @@ const ProductShowcase = () => {
                   />
                 </div>
                 <CardHeader>
-                  <div className="flex items-center justify-between mb-2">
-                    <Badge variant="outline" className="text-xs">
-                      {product.category}
-                    </Badge>
-                  </div>
-                  <CardTitle className="text-xl group-hover:text-primary transition-smooth">
+                  <CardTitle className="text-xl text-center text-primary transition-smooth">
                     {product.name}
                   </CardTitle>
-                  <CardDescription className="text-muted-foreground">
+                  <CardDescription className="text-muted-foreground whitespace-pre-line">
                     {product.description}
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <Button 
-                      variant="outline" 
-                      className="w-full group"
-                      onClick={() => toggleExpansion(product.id)}
-                    >
-                      {expandedProduct === product.id ? (
-                        <ChevronUp className="w-4 h-4 mr-2" />
-                      ) : (
-                        <Eye className="w-4 h-4 mr-2" />
-                      )}
-                      {expandedProduct === product.id ? "Ver menos" : "Ver más"}
-                    </Button>
-                  </div>
-                </CardContent>
               </Card>
 
-              {/* Subproducts Section - Only for products with subproducts */}
-              {expandedProduct === product.id && product.subproducts && (
-                <div className="space-y-4">
-                  {/* Description Box */}
-                  <Card className="bg-gradient-subtle border-primary/20">
-                    <CardContent className="pt-6">
-                      <h4 className="font-semibold text-foreground mb-2">
-                        {product.name === "Polar" ? "Sobre el Polar" : 
-                         product.name === "Deportivo" ? "Sobre el Deportivo" : 
-                         product.name === "Camisetas" ? "Sobre las Camisetas" :
-                         `Sobre ${product.name}`}
-                      </h4>
-                      <p className="text-sm text-muted-foreground">
-                        {product.name === "Polar" ? 
-                          "Nuestro polar es una tela sintética de alta calidad que combina calidez y durabilidad. Perfecta para prendas de abrigo y frazadas." :
-                          product.name === "Deportivo" ?
-                          "Nuestro tejido deportivo está diseñado para ofrecer máximo rendimiento en " +
-                          "actividades físicas. Combina transpirabilidad, elasticidad y secado rápido " +
-                          "para mantener la comodidad durante el ejercicio. Ideal para prendas de " +
-                          "activewear y ropa deportiva de alta calidad." :
-                          product.name === "Camisetas" ?
-                          "Nuestras camisetas están confeccionadas con algodón de alta calidad, " +
-                          "ofreciendo máxima comodidad y transpirabilidad. Disponibles en diferentes " +
-                          "pesos y composiciones para adaptarse a cada necesidad. Desde conjuntos " +
-                          "completos hasta opciones con elastano para mayor flexibilidad." :
-                          `Información detallada sobre ${product.name.toLowerCase()}.`
-                        }
-                      </p>
-                    </CardContent>
-                  </Card>
-
-                  {/* Subproducts */}
-                  <div className="grid gap-4">
-                    <h4 className="font-semibold text-foreground">Variantes disponibles:</h4>
-                    {product.subproducts.map((subproduct) => (
-                      <Card key={subproduct.id} className="border-border hover:border-primary/20 transition-smooth">
-                        <CardContent className="pt-4">
-                          <div className="flex items-center justify-between mb-2">
-                            <h5 className="font-medium text-foreground">{subproduct.name}</h5>
-                          </div>
-                          <p className="text-sm text-muted-foreground mb-4">
-                            {subproduct.description}
-                          </p>
-                          <div className="space-y-2 pt-4 border-t border-border">
-                            <div className="text-sm">
-                              <span className="font-semibold text-foreground">Composición:</span>
-                              <span className="text-muted-foreground ml-2">{subproduct.composicion}</span>
-                            </div>
-                            <div className="text-sm">
-                              <span className="font-semibold text-foreground">Ancho:</span>
-                              <span className="text-muted-foreground ml-2">{subproduct.ancho}</span>
-                            </div>
-                            <div className="text-sm">
-                              <span className="font-semibold text-foreground">Rendimiento:</span>
-                              <span className="text-muted-foreground ml-2">{subproduct.rendimiento}</span>
-                            </div>
-                          </div>
-                        </CardContent>
-                      </Card>
-                    ))}
-                  </div>
-                </div>
-              )}
             </div>
           ))}
         </div>

@@ -29,7 +29,7 @@ const FabricCatalog = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {fabrics.map((fabric) => (
             <Card key={fabric.id} className="group cursor-pointer hover:shadow-lg transition-all duration-300 overflow-hidden">
-              <div className="aspect-video overflow-hidden">
+              <div className="aspect-video overflow-hidden hidden">
                 <img 
                   src={fabric.image} 
                   alt={fabric.name}

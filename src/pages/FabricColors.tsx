@@ -78,7 +78,7 @@ const FabricColors = () => {
             </Button>
             
             <div className="flex flex-col lg:flex-row gap-8 items-start">
-              <div className="w-full lg:w-1/3">
+              <div className="w-full lg:w-1/3 hidden">
                 <img 
                   src={fabric.image} 
                   alt={fabric.name}
@@ -146,30 +146,6 @@ const FabricColors = () => {
                         </Button>
                       </div>
                     </div>
-                    
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-muted-foreground">HEX:</span>
-                      <div className="flex items-center gap-2">
-                        <span className="font-mono text-foreground">
-                          {color.hex.toUpperCase()}
-                        </span>
-                        <Button
-                          size="sm"
-                          variant="ghost"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            copyToClipboard(color.hex.toUpperCase(), color.name);
-                          }}
-                          className="h-6 w-6 p-0"
-                        >
-                          {copiedCode === color.hex.toUpperCase() ? (
-                            <Check className="w-3 h-3 text-green-500" />
-                          ) : (
-                            <Copy className="w-3 h-3" />
-                          )}
-                        </Button>
-                      </div>
-                    </div>
                   </div>
                 </CardContent>
               </Card>
@@ -189,9 +165,10 @@ const FabricColors = () => {
                 <Button onClick={() => navigate('/#contacto')}>
                   Contactar ahora
                 </Button>
-                <Button variant="outline" onClick={() => navigate('/#client-portal')}>
+                {/* Sistema de pedidos oculto - descomentar para reactivar */}
+                {/* <Button variant="outline" onClick={() => navigate('/#client-portal')}>
                   Realizar pedido
-                </Button>
+                </Button> */}
               </div>
             </div>
           </div>

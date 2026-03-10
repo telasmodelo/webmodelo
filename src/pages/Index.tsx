@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import ValueProposition from "@/components/ValueProposition";
+import Banners from "@/components/Banners";
 import ProductShowcase from "@/components/ProductShowcase";
 import ClientPortal from "@/components/ClientPortal";
 import ContactForm from "@/components/ContactForm";
@@ -33,8 +34,10 @@ const Index = () => {
       <main>
         <Hero />
         <ValueProposition />
+        <Banners />
         <ProductShowcase />
-        <ClientPortal />
+        {/* Sistema de pedidos oculto - descomentar para reactivar */}
+        {/* <ClientPortal /> */}
         <ContactForm />
       </main>
       <Footer />

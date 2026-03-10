@@ -11,7 +11,7 @@ const valuePropositions = [
   {
     icon: Droplets,
     title: "Tintorería especializada", 
-    description: "Procesos de teñido de alto nivel, flexibles y orientados a las necesidades de cada cliente."
+    description: "Procesos de teñido de alto nivel, flexibles y orientados a las necesidades de cada producto."
   },
   {
     icon: CheckCircle,
@@ -20,8 +20,8 @@ const valuePropositions = [
   },
   {
     icon: Clock,
-    title: "Agilidad en entregas",
-    description: "Gestionamos entregas de manera eficiente, garantizando una respuesta rápida y fluida a las necesidades del mercado."
+    title: "Garantía en entregas",
+    description: "Gestionamos entregas de manera eficiente, garantizando una respuesta rápida."
   },
   {
     icon: Layers,
@@ -30,8 +30,8 @@ const valuePropositions = [
   },
   {
     icon: Users,
-    title: "Asesoramiento cercano",
-    description: "Un equipo que acompaña a cada cliente para ofrecer soluciones textiles a medida."
+    title: "Asesoramiento profesional",
+    description: "Acompañamos a cada cliente para seleccionar el producto que mejor se adapta a sus necesidades."
   }
 ];
 

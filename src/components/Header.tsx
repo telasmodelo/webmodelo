@@ -85,8 +85,8 @@ const Header = () => {
             </a>
           </nav>
 
-          {/* CTA Button */}
-          <div className="hidden md:flex items-center">
+          {/* CTA Button - Sistema de pedidos oculto - descomentar para reactivar */}
+          {/* <div className="hidden md:flex items-center">
             <Button 
               variant="hero" 
               size="default"
@@ -95,7 +95,7 @@ const Header = () => {
               <LogIn className="w-4 h-4 mr-2" />
               INGRESO SISTEMA PEDIDOS
             </Button>
-          </div>
+          </div> */}
 
           {/* Mobile Menu Button */}
           <button
@@ -131,7 +131,8 @@ const Header = () => {
                 Contacto
               </a>
             </nav>
-            <div className="flex flex-col space-y-3">
+            {/* Sistema de pedidos oculto - descomentar para reactivar */}
+            {/* <div className="flex flex-col space-y-3">
               <Button 
                 variant="hero" 
                 size="default" 
@@ -144,7 +145,7 @@ const Header = () => {
                 <LogIn className="w-4 h-4 mr-2" />
                 INGRESO SISTEMA PEDIDOS
               </Button>
-            </div>
+            </div> */}
           </div>
         )}
       </div>

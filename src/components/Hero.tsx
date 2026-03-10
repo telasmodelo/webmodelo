@@ -6,9 +6,9 @@ const Hero = () => {
     <section className="relative overflow-hidden bg-gradient-subtle">
       <div className="absolute inset-0 textile-pattern opacity-30"></div>
       <div className="container mx-auto px-4 py-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-3 gap-8 items-center">
           {/* Left Column - Content */}
-          <div className="space-y-8">
+          <div className="lg:col-span-2 space-y-8">
             <div className="space-y-6">
               <h1 className="text-4xl lg:text-6xl font-bold text-foreground leading-tight">
                 <span className="bg-gradient-primary bg-clip-text text-transparent">
@@ -22,7 +22,8 @@ const Hero = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button 
+              {/* Sistema de pedidos oculto - descomentar para reactivar */}
+              {/* <Button 
                 variant="hero" 
                 size="xl" 
                 className="group"
@@ -30,25 +31,27 @@ const Hero = () => {
               >
                 Ingresá a tu Portal
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-smooth" />
-              </Button>
+              </Button> */}
               <Button 
-                variant="outline" 
+                variant="hero" 
                 size="xl"
+                className="group"
                 onClick={() => document.getElementById('productos')?.scrollIntoView({ behavior: 'smooth' })}
               >
                 Conocé nuestros Productos
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-smooth" />
               </Button>
             </div>
 
           </div>
 
           {/* Right Column - Factory Image */}
-          <div className="lg:mt-0">
+          <div className="lg:col-span-1 lg:mt-0">
             <div className="rounded-2xl overflow-hidden shadow-glow">
               <img 
-                src="/lovable-uploads/e47cc675-a276-4454-8905-353e3bf687f7.png" 
+                src="/images/foto inicio.jpg" 
                 alt="Planta industrial de Telas Modelo"
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-cover max-h-[500px]"
               />
             </div>
           </div>
