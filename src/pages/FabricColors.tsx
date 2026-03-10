@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { ArrowLeft, Copy, Check } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { getFabricById } from "@/data/fabrics";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -7,13 +7,10 @@ import { Badge } from "@/components/ui/badge";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { useState, useEffect } from "react";
-import { useToast } from "@/hooks/use-toast";
 
 const FabricColors = () => {
   const { fabricId } = useParams<{ fabricId: string }>();
   const navigate = useNavigate();
-  const { toast } = useToast();
-  const [copiedCode, setCopiedCode] = useState<string | null>(null);
   const [selectedColor, setSelectedColor] = useState<string | null>(null);
   
   const fabric = fabricId ? getFabricById(fabricId) : null;
@@ -42,24 +39,6 @@ const FabricColors = () => {
       </div>
     );
   }
-
-  const copyToClipboard = async (text: string, colorName: string) => {
-    try {
-      await navigator.clipboard.writeText(text);
-      setCopiedCode(text);
-      toast({
-        title: "Código copiado",
-        description: `El código ${text} de ${colorName} se copió al portapapeles`,
-      });
-      setTimeout(() => setCopiedCode(null), 2000);
-    } catch (err) {
-      toast({
-        title: "Error",
-        description: "No se pudo copiar el código",
-        variant: "destructive",
-      });
-    }
-  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -121,31 +100,12 @@ const FabricColors = () => {
                     {color.name}
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="pt-0 space-y-3">
-                  <div className="text-center space-y-2">
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-muted-foreground">Código:</span>
-                      <div className="flex items-center gap-2">
-                        <span className="font-mono font-semibold text-foreground">
-                          {color.code}
-                        </span>
-                        <Button
-                          size="sm"
-                          variant="ghost"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            copyToClipboard(color.code, color.name);
-                          }}
-                          className="h-6 w-6 p-0"
-                        >
-                          {copiedCode === color.code ? (
-                            <Check className="w-3 h-3 text-green-500" />
-                          ) : (
-                            <Copy className="w-3 h-3" />
-                          )}
-                        </Button>
-                      </div>
-                    </div>
+                <CardContent className="pt-0">
+                  <div className="text-center text-sm text-muted-foreground">
+                    <span className="mr-1">Código:</span>
+                    <span className="font-mono font-semibold text-foreground">
+                      {color.code}
+                    </span>
                   </div>
                 </CardContent>
               </Card>

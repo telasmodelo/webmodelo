@@ -22,7 +22,7 @@ const FabricCatalog = () => {
             </span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Descubre nuestra amplia gama de telas y colores disponibles. Haz clic en cada tela para ver todos los colores disponibles.
+            Descubre nuestra amplia gama de telas y colores disponibles. Haz clic en cada tela para ver todos los colores disponibles. Los colores pueden variar según pantalla. Solicitar muestra física.
           </p>
         </div>
 
