@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import FabricCarousel from "@/components/FabricCarousel";
 import ValueProposition from "@/components/ValueProposition";
 import Banners from "@/components/Banners";
 import ProductShowcase from "@/components/ProductShowcase";
@@ -35,6 +36,7 @@ const Index = () => {
         <Hero />
         <ValueProposition />
         <Banners />
+        <FabricCarousel />
         <ProductShowcase />
         {/* Sistema de pedidos oculto - descomentar para reactivar */}
         {/* <ClientPortal /> */}

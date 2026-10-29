@@ -19,6 +19,9 @@ const Hero = () => {
               <p className="text-xl text-muted-foreground leading-relaxed">
                 Especializados en la producción de telas y servicios de tintorería, brindamos innovación y calidad a la industria textil argentina.
               </p>
+              <p className="text-xl text-muted-foreground italic leading-relaxed">
+                Somos fábrica. Venta mayorista a partir de rollo completo.
+              </p>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
